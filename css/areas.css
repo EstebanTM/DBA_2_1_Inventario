@@ -1,0 +1,15 @@
+.registro{
+    margin-top: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.tblAreas{
+    margin-top: 176px;
+}
+.tblHead{
+    background-color: aqua !important;
+}
+.frmEdit{
+    margin-top: 100px !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
