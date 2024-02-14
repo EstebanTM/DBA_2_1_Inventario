@@ -19,36 +19,38 @@
         <a href="#">Contact</a>
         </nav>
     </header>
-    <form class="frmEdit col-4 p-3 m-auto" method="POST" action="agregar.php">
+    <form class="frmEdit col-4 p-3 m-auto" method="POST" action="update.php">
         <h3 class="text-center alert alert-secondary">Editar areas</h3>
         <?php
 	        require ("../../conexion/classConnectionMySQL.php");
 
 			// Creamos una nueva instancia
 			$NewConn = new ConnectionMySQL();
-
 			// Creamos una nueva conexion
 			$NewConn->CreateConnection();
 			/////////
 			$id= $_GET['id'];
 			
 			///Consulta a la base de datos
-			$query = "Select * from yugioh WHERE id = $id";
+			$query = "Select * from areas WHERE id = $id";
 			$result = $NewConn -> ExecuteQuery($query);
-        ?>
-    <div class="mb-3">
-        <label for="id" class="form-label">ID</label>
-        <input type="text" class="form-control" id="id" name="id">
-    </div>
-    <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="name" name="name">
-    </div>
-    <div class="mb-3">
-        <label for="locat" class="form-label">Ubicación</label>
-        <input type="text" class="form-control" id="locat" name="locat">
-    </div>
-    <button type="submit" class="btn btn-primary">Editar</button>
+            while($datos=$result->fetch_object()){?>
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" value="<?= $datos->id ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="nombre" value="<?= $datos->Nombre ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="locat" class="form-label">Ubicación</label>
+                    <input type="text" class="form-control" id="locat" name="ubicacion" value="<?= $datos->Ubicacion ?>">
+                </div>
+            <?php }
+            
+            ?>
+        <button type="submit" class="btn btn-primary">Editar</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

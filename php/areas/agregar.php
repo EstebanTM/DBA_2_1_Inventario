@@ -1,7 +1,6 @@
 <?php
 
 require ("../../conexion/classConnectionMySQL.php");
-$id = $_POST['id'];
 $nombre = $_POST['name'];
 $ubicacion = $_POST['locat'];
 ////<<<creamos una instancia
@@ -10,7 +9,7 @@ $Newconn = new ConnectionMySQL();
 ///creamos conexion
 $Newconn->CreateConnection();
 
-$query="insert into Areas values('$id','$nombre','$ubicacion')";
+$query="insert into areas(Nombre, Ubicacion) values('$nombre','$ubicacion')";
 $result = $Newconn->ExecuteQuery($query);
 if($result){
 		$RowCount = $Newconn->GetCountAffectedRows();

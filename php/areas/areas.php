@@ -23,10 +23,6 @@
 <form class="registro col-4 p-3" method="POST" action="agregar.php">
 	<h3 class="text-center alert alert-secondary">Registro de areas</h3>
   <div class="mb-3">
-    <label for="id" class="form-label">ID</label>
-    <input type="text" class="form-control" id="id" name="id">
-  </div>
-  <div class="mb-3">
     <label for="name" class="form-label">Nombre</label>
     <input type="text" class="form-control" id="name" name="name">
   </div>
@@ -55,7 +51,7 @@ echo "
   </thead>
   <tbody>";
 
-$query = "SELECT * FROM Areas";
+$query = "SELECT * FROM areas";
 $result = $Newconn->ExecuteQuery($query);
 if ($result) {
     while ($row = $Newconn->GetRows($result)) {
@@ -71,7 +67,7 @@ if ($result) {
     }
     $Newconn->SetFreeResult($result);
 } else {
-    echo "<tr><td colspan='5'><h1>Error al conectar a la base de datos</h1></td></tr>";
+    echo "<tr><td colspan='5'><h1>Error al conectar al inventario</h1></td></tr>";
 }
 
 echo "

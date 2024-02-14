@@ -7,7 +7,7 @@ $NewConn = new ConnectionMySQL();
 // Creamos una nueva conexion
 $NewConn->CreateConnection();
 ///Consulta a la base de datos
-$query = "DELETE FROM Areas WHERE id = $id";
+$query = "DELETE FROM areas WHERE id = $id";
 $result = $NewConn -> ExecuteQuery($query);
 if ($result){
 	$RowCount = $NewConn -> GetCountAffectedRows();
