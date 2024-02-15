@@ -2,22 +2,28 @@
 require ("../../conexion/classConnectionMySQL.php");
 $id = $_POST['id'];
 $nombre = $_POST['nombre'];
-$ubicacion = $_POST['ubicacion'];
+$descripcion = $_POST['descripcion'];
+$serie = $_POST['serie'];
+$color = $_POST['color'];
+$fechaAd = $_POST['fechaAd'];
+$tipoAd = $_POST['tipoAd'];
+$observaciones = $_POST['observaciones'];
+$area = $_POST['area'];
 // Creamos una nueva instancia
 $NewConn = new ConnectionMySQL();
 // Creamos una nueva conexion
 $NewConn->CreateConnection();
 ///Realiza la insecion de datos a la base de datos
-echo $query="UPDATE areas 
-                SET Nombre = '$nombre', Ubicacion = '$ubicacion' 
-                    WHERE id = $id";
+echo $query="UPDATE inventario 
+                SET Nombre = '$nombre', Descripcion = '$descripcion', Serie = '$serie', Color = '$color', FechaAd = '$fechaAd',  TipoAd = '$tipoAd', Observaciones = '$observaciones', Area = '$area'
+                    WHERE ID = $id";
 $result=$NewConn->ExecuteQuery($query);
     if($result){
         $RowCount =  $NewConn->GetCountAffectedRows();
         if($RowCount > 0){
             echo "Query ejecutado exitosamente<br/>";
-			header("Location: areas.php");
-			header('Location: areas.php');
+			header("Location: inventario.php");
+			header('Location: inventario.php');
         }
     }else{
         echo "<h3>Error al ejecutar la consulta</h3>";
