@@ -37,7 +37,7 @@
             while($datos=$result->fetch_object()){?>
                 <div class="mb-3">
                     <label for="id" class="form-label">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" value="<?= $datos->ID ?>">
+                    <input type="text" class="form-control" id="id" name="id" value="<?= $datos->id ?>">
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="locat" class="form-label">Fecha adquision</label>
-                    <input type="text" class="form-control" id="fechaAd" name="fechaAd" value="<?= $datos->FechaAd ?>">
+                    <input type="date" class="form-control" id="fechaAd" name="fechaAd" value="<?= $datos->FechaAd ?>">
                 </div>
                 <div class="mb-3">
                     <label for="locat" class="form-label">Tipo adquision</label>

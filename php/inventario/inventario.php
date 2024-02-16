@@ -40,7 +40,7 @@
   </div>
   <div class="mb-3">
     <label for="locat" class="form-label">Fecha de adquirido</label>
-    <input type="text" class="form-control" id="fechaAd" name="fechaAd">
+    <input type="date" class="form-control" id="fechaAd" name="fechaAd">
   </div>
   <div class="mb-3">
     <label for="locat" class="form-label">Tipo de adquision</label>
@@ -81,7 +81,21 @@ echo "
   </thead>
   <tbody>";
 
-$query = "SELECT * FROM inventario";
+$query = "SELECT 
+          inventario.id,
+          inventario.Nombre,
+          inventario.Descripcion,
+          inventario.Serie,
+          inventario.Color,
+          inventario.FechaAd,
+          inventario.TipoAd,
+          inventario.Observaciones,
+          areas.nombre AS NombreArea
+          FROM 
+          inventario
+          JOIN 
+          areas ON inventario.Area = areas.id;
+";
 $result = $Newconn->ExecuteQuery($query);
 if ($result) {
     while ($row = $Newconn->GetRows($result)) {
