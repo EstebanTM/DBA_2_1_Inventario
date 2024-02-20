@@ -67,12 +67,7 @@
                     <label for="locat" class="form-label">Observaciones</label>
                     <input type="text" class="form-control" id="observaciones" name="observaciones" value="<?= $datos->Observaciones ?>">
                 </div>
-                <div class="mb-3">
-                    <label for="locat" class="form-label">Area</label>
-                    <input type="text" class="form-control" id="area" name="area" value="<?= $datos->Area ?>">
-                </div>
             <?php }
-            
             ?>
         <button type="submit" class="btn btn-primary">Editar</button>
     </form>
