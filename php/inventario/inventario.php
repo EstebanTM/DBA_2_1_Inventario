@@ -14,53 +14,15 @@
 <header class="header">
   <a href="#" class="titulo">Inventario</a>
     <nav class="navbar">
-      <a href="../../index.html">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+      <a href="frmAgregar.php">Agregar</a>
+      <a href="../../index.html">Inicio</a>
 </header>
-<div class="container-fluid row">
-<form class="registro col-4 p-3" method="POST" action="agregar.php">
-	<h3 class="text-center alert alert-secondary">Registro de productos</h3>
-  <div class="mb-3">
-    <label for="name" class="form-label">Nombre</label>
-    <input type="text" class="form-control" id="nombre" name="nombre">
-  </div>
-  <div class="mb-3">
-    <label for="locat" class="form-label">Descripcion</label>
-    <input type="text" class="form-control" id="descripcion" name="descripcion">
-  </div>
-  <div class="mb-3">
-    <label for="locat" class="form-label">Serie</label>
-    <input type="text" class="form-control" id="serie" name="serie">
-  </div>
-  <div class="mb-3">
-    <label for="locat" class="form-label">Color</label>
-    <input type="text" class="form-control" id="color" name="color">
-  </div>
-  <div class="mb-3">
-    <label for="locat" class="form-label">Fecha de adquirido</label>
-    <input type="date" class="form-control" id="fechaAd" name="fechaAd">
-  </div>
-  <div class="mb-3">
-    <label for="locat" class="form-label">Tipo de adquision</label>
-    <input type="text" class="form-control" id="tipoAd" name="tipoAd">
-  </div>
-  <div class="mb-3">
-    <label for="locat" class="form-label">Observaciones</label>
-    <input type="text" class="form-control" id="observaciones" name="observaciones">
-  </div>
-  <div class="mb-3">
-    <label for="locat" class="form-label">Area</label>
-    <input type="text" class="form-control" id="area" name="area">
-  </div>
-  <button type="submit" class="btn btn-primary">Agregar</button>
-</form>
 
-<div class="tblInventario col-8 p-4">
+<div class="container-fluid row">
+<div class="tblInventario p-4">
 <?php
 require("../../conexion/classConnectionMySQL.php");
-$Newconn = new ConnectionMySQL();
+$Newconn = new ConnectionMySQL(); 
 $Newconn->CreateConnection();
 
 echo "

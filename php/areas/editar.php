@@ -15,7 +15,7 @@
     <a href="#" class="titulo">Areas</a>
         <nav class="navbar">
         <a href="areas.php">Regresar</a>
-        <a href="../../index.html">Home</a>
+        <a href="../../index.html">Inicio</a>
         <a href="#">Contact</a>
         </nav>
     </header>

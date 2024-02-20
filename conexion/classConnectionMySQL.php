@@ -1,8 +1,6 @@
 <?php
-//classConnectionMySQL.php
 
 class ConnectionMySQL{
-	//Definicion de atributos
 	private $host;
 	private $user;
 	private $password;

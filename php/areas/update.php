@@ -7,7 +7,7 @@ $ubicacion = $_POST['ubicacion'];
 $NewConn = new ConnectionMySQL();
 // Creamos una nueva conexion
 $NewConn->CreateConnection();
-///Realiza la insecion de datos a la base de datos
+///Realiza la insecion de datos
 echo $query="UPDATE areas 
                 SET Nombre = '$nombre', Ubicacion = '$ubicacion' 
                     WHERE id = $id";

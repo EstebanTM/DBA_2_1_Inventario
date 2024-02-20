@@ -14,9 +14,7 @@
 <header class="header">
   <a href="#" class="titulo">Areas</a>
     <nav class="navbar">
-      <a href="../../index.html">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="../../index.html">Inicio</a>
     </nav>
 </header>
 <div class="container-fluid row">
