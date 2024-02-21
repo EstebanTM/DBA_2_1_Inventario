@@ -8,14 +8,13 @@ $color = $_POST['color'];
 $fechaAd = $_POST['fechaAd'];
 $tipoAd = $_POST['tipoAd'];
 $observaciones = $_POST['observaciones'];
-$area = $_POST['area'];
 // Creamos una nueva instancia
 $NewConn = new ConnectionMySQL();
 // Creamos una nueva conexion
 $NewConn->CreateConnection();
 ///Realiza la insecion de datos a la base de datos
 echo $query="UPDATE inventario 
-                SET Nombre = '$nombre', Descripcion = '$descripcion', Serie = '$serie', Color = '$color', FechaAd = '$fechaAd',  TipoAd = '$tipoAd', Observaciones = '$observaciones', Area = '$area'
+                SET Nombre = '$nombre', Descripcion = '$descripcion', Serie = '$serie', Color = '$color', FechaAd = '$fechaAd',  TipoAd = '$tipoAd', Observaciones = '$observaciones'
                     WHERE ID = $id";
 $result=$NewConn->ExecuteQuery($query);
     if($result){
